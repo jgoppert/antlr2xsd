@@ -1,302 +1,302 @@
 <schema>
   <complex_type name="stored_definition" min_occurs="0" max_occurs="unbounded">
-    <element name="component_reference" type="component_reference"/>
-    <element name="stored_definition_class" type="stored_definition_class"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="stored_definition_class" rule_type="stored_definition_class"/>
   </complex_type>
   <complex_type name="stored_definition_class">
-    <element name="class_definition" type="class_definition"/>
+    <element name="class_definition" rule_type="class_definition"/>
   </complex_type>
   <complex_type name="class_definition">
-    <element name="class_prefixes" type="class_prefixes"/>
-    <element name="class_specifier" type="class_specifier"/>
+    <element name="class_prefixes" rule_type="class_prefixes"/>
+    <element name="class_specifier" rule_type="class_specifier"/>
   </complex_type>
   <complex_type name="class_prefixes">
-    <element name="class_type" type="class_type"/>
+    <element name="class_type" rule_type="class_type"/>
   </complex_type>
   <complex_type name="class_type"/>
   <complex_type name="class_specifier" min_occurs="3" max_occurs="3">
-    <element name="string_comment" type="string_comment"/>
-    <element name="composition" type="composition"/>
-    <element name="base_prefix" type="base_prefix"/>
-    <element name="component_reference" type="component_reference"/>
-    <element name="class_modification" type="class_modification"/>
-    <element name="comment" type="comment"/>
-    <element name="enum_list" type="enum_list"/>
-    <element name="name" type="name"/>
+    <element name="string_comment" rule_type="string_comment"/>
+    <element name="composition" rule_type="composition"/>
+    <element name="base_prefix" rule_type="base_prefix"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="class_modification" rule_type="class_modification"/>
+    <element name="comment" rule_type="comment"/>
+    <element name="enum_list" rule_type="enum_list"/>
+    <element name="name" rule_type="name"/>
   </complex_type>
   <complex_type name="base_prefix">
-    <element name="type_prefix" type="type_prefix"/>
+    <element name="type_prefix" rule_type="type_prefix"/>
   </complex_type>
   <complex_type name="enum_list" min_occurs="1" max_occurs="unbounded">
-    <element name="enumeration_literal" type="enumeration_literal"/>
+    <element name="enumeration_literal" rule_type="enumeration_literal"/>
   </complex_type>
   <complex_type name="enumeration_literal">
-    <element name="comment" type="comment"/>
+    <element name="comment" rule_type="comment"/>
   </complex_type>
   <complex_type name="composition" min_occurs="0" max_occurs="2">
-    <element name="element_list" type="element_list"/>
-    <element name="equation_section" type="equation_section"/>
-    <element name="algorithm_section" type="algorithm_section"/>
-    <element name="language_specification" type="language_specification"/>
-    <element name="external_function_call" type="external_function_call"/>
-    <element name="annotation" type="annotation"/>
+    <element name="element_list" rule_type="element_list"/>
+    <element name="equation_section" rule_type="equation_section"/>
+    <element name="algorithm_section" rule_type="algorithm_section"/>
+    <element name="language_specification" rule_type="language_specification"/>
+    <element name="external_function_call" rule_type="external_function_call"/>
+    <element name="annotation" rule_type="annotation"/>
   </complex_type>
   <complex_type name="language_specification"/>
   <complex_type name="external_function_call" min_occurs="0" max_occurs="1">
-    <element name="component_reference" type="component_reference"/>
-    <element name="expression_list" type="expression_list"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="expression_list" rule_type="expression_list"/>
   </complex_type>
   <complex_type name="element_list" min_occurs="0" max_occurs="unbounded">
-    <element name="element" type="element"/>
+    <element name="element" rule_type="element"/>
   </complex_type>
   <complex_type name="element">
-    <element name="import_clause" type="import_clause"/>
-    <element name="extends_clause" type="extends_clause"/>
-    <element name="regular_element" type="regular_element"/>
-    <element name="replaceable_element" type="replaceable_element"/>
+    <element name="import_clause" rule_type="import_clause"/>
+    <element name="extends_clause" rule_type="extends_clause"/>
+    <element name="regular_element" rule_type="regular_element"/>
+    <element name="replaceable_element" rule_type="replaceable_element"/>
   </complex_type>
   <complex_type name="regular_element">
-    <element name="class_definition" type="class_definition"/>
-    <element name="component_clause" type="component_clause"/>
+    <element name="class_definition" rule_type="class_definition"/>
+    <element name="component_clause" rule_type="component_clause"/>
   </complex_type>
   <complex_type name="replaceable_element" min_occurs="0" max_occurs="1">
-    <element name="class_definition" type="class_definition"/>
-    <element name="component_clause" type="component_clause"/>
-    <element name="constraining_clause" type="constraining_clause"/>
-    <element name="comment" type="comment"/>
+    <element name="class_definition" rule_type="class_definition"/>
+    <element name="component_clause" rule_type="component_clause"/>
+    <element name="constraining_clause" rule_type="constraining_clause"/>
+    <element name="comment" rule_type="comment"/>
   </complex_type>
   <complex_type name="import_clause" min_occurs="0" max_occurs="1">
-    <element name="component_reference" type="component_reference"/>
-    <element name="import_list" type="import_list"/>
-    <element name="comment" type="comment"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="import_list" rule_type="import_list"/>
+    <element name="comment" rule_type="comment"/>
   </complex_type>
   <complex_type name="import_list" min_occurs="0" max_occurs="unbounded">
-    <element name="import_list" type="import_list"/>
+    <element name="import_list" rule_type="import_list"/>
   </complex_type>
   <complex_type name="extends_clause">
-    <element name="component_reference" type="component_reference"/>
-    <element name="class_modification" type="class_modification"/>
-    <element name="annotation" type="annotation"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="class_modification" rule_type="class_modification"/>
+    <element name="annotation" rule_type="annotation"/>
   </complex_type>
   <complex_type name="constraining_clause">
-    <element name="name" type="name"/>
-    <element name="class_modification" type="class_modification"/>
+    <element name="name" rule_type="name"/>
+    <element name="class_modification" rule_type="class_modification"/>
   </complex_type>
   <complex_type name="component_clause">
-    <element name="type_prefix" type="type_prefix"/>
-    <element name="type_specifier" type="type_specifier"/>
-    <element name="array_subscripts" type="array_subscripts"/>
-    <element name="component_list" type="component_list"/>
+    <element name="type_prefix" rule_type="type_prefix"/>
+    <element name="type_specifier" rule_type="type_specifier"/>
+    <element name="array_subscripts" rule_type="array_subscripts"/>
+    <element name="component_list" rule_type="component_list"/>
   </complex_type>
   <complex_type name="type_prefix"/>
   <complex_type name="type_specifier_element"/>
   <complex_type name="type_specifier" min_occurs="1" max_occurs="unbounded">
-    <element name="type_specifier_element" type="type_specifier_element"/>
+    <element name="type_specifier_element" rule_type="type_specifier_element"/>
   </complex_type>
   <complex_type name="component_list" min_occurs="1" max_occurs="unbounded">
-    <element name="component_declaration" type="component_declaration"/>
+    <element name="component_declaration" rule_type="component_declaration"/>
   </complex_type>
   <complex_type name="component_declaration">
-    <element name="declaration" type="declaration"/>
-    <element name="condition_attribute" type="condition_attribute"/>
-    <element name="comment" type="comment"/>
+    <element name="declaration" rule_type="declaration"/>
+    <element name="condition_attribute" rule_type="condition_attribute"/>
+    <element name="comment" rule_type="comment"/>
   </complex_type>
   <complex_type name="condition_attribute">
-    <element name="expression" type="expression"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="declaration">
-    <element name="array_subscripts" type="array_subscripts"/>
-    <element name="modification" type="modification"/>
+    <element name="array_subscripts" rule_type="array_subscripts"/>
+    <element name="modification" rule_type="modification"/>
   </complex_type>
   <complex_type name="modification" min_occurs="2" max_occurs="3">
-    <element name="class_modification" type="class_modification"/>
-    <element name="expression" type="expression"/>
+    <element name="class_modification" rule_type="class_modification"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="class_modification">
-    <element name="argument_list" type="argument_list"/>
+    <element name="argument_list" rule_type="argument_list"/>
   </complex_type>
   <complex_type name="argument_list" min_occurs="1" max_occurs="unbounded">
-    <element name="argument" type="argument"/>
+    <element name="argument" rule_type="argument"/>
   </complex_type>
   <complex_type name="argument">
-    <element name="element_modification_or_replaceable" type="element_modification_or_replaceable"/>
-    <element name="element_redeclaration" type="element_redeclaration"/>
+    <element name="element_modification_or_replaceable" rule_type="element_modification_or_replaceable"/>
+    <element name="element_redeclaration" rule_type="element_redeclaration"/>
   </complex_type>
   <complex_type name="element_modification_or_replaceable">
-    <element name="element_modification" type="element_modification"/>
-    <element name="element_replaceable" type="element_replaceable"/>
+    <element name="element_modification" rule_type="element_modification"/>
+    <element name="element_replaceable" rule_type="element_replaceable"/>
   </complex_type>
   <complex_type name="element_modification">
-    <element name="component_reference" type="component_reference"/>
-    <element name="modification" type="modification"/>
-    <element name="string_comment" type="string_comment"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="modification" rule_type="modification"/>
+    <element name="string_comment" rule_type="string_comment"/>
   </complex_type>
   <complex_type name="element_redeclaration">
-    <element name="short_class_definition" type="short_class_definition"/>
-    <element name="component_clause1" type="component_clause1"/>
-    <element name="element_replaceable" type="element_replaceable"/>
+    <element name="short_class_definition" rule_type="short_class_definition"/>
+    <element name="component_clause1" rule_type="component_clause1"/>
+    <element name="element_replaceable" rule_type="element_replaceable"/>
   </complex_type>
   <complex_type name="element_replaceable">
-    <element name="short_class_definition" type="short_class_definition"/>
-    <element name="component_clause1" type="component_clause1"/>
-    <element name="constraining_clause" type="constraining_clause"/>
+    <element name="short_class_definition" rule_type="short_class_definition"/>
+    <element name="component_clause1" rule_type="component_clause1"/>
+    <element name="constraining_clause" rule_type="constraining_clause"/>
   </complex_type>
   <complex_type name="component_clause1">
-    <element name="type_prefix" type="type_prefix"/>
-    <element name="type_specifier" type="type_specifier"/>
-    <element name="component_declaration1" type="component_declaration1"/>
+    <element name="type_prefix" rule_type="type_prefix"/>
+    <element name="type_specifier" rule_type="type_specifier"/>
+    <element name="component_declaration1" rule_type="component_declaration1"/>
   </complex_type>
   <complex_type name="component_declaration1">
-    <element name="declaration" type="declaration"/>
-    <element name="comment" type="comment"/>
+    <element name="declaration" rule_type="declaration"/>
+    <element name="comment" rule_type="comment"/>
   </complex_type>
   <complex_type name="short_class_definition" min_occurs="2" max_occurs="2">
-    <element name="class_prefixes" type="class_prefixes"/>
-    <element name="base_prefix" type="base_prefix"/>
-    <element name="component_reference" type="component_reference"/>
-    <element name="array_subscripts" type="array_subscripts"/>
-    <element name="class_modification" type="class_modification"/>
-    <element name="comment" type="comment"/>
-    <element name="enum_list" type="enum_list"/>
+    <element name="class_prefixes" rule_type="class_prefixes"/>
+    <element name="base_prefix" rule_type="base_prefix"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="array_subscripts" rule_type="array_subscripts"/>
+    <element name="class_modification" rule_type="class_modification"/>
+    <element name="comment" rule_type="comment"/>
+    <element name="enum_list" rule_type="enum_list"/>
   </complex_type>
   <complex_type name="equation_block" min_occurs="0" max_occurs="unbounded">
-    <element name="equation" type="equation"/>
+    <element name="equation" rule_type="equation"/>
   </complex_type>
   <complex_type name="equation_section">
-    <element name="equation_block" type="equation_block"/>
+    <element name="equation_block" rule_type="equation_block"/>
   </complex_type>
   <complex_type name="statement_block" min_occurs="0" max_occurs="unbounded">
-    <element name="statement" type="statement"/>
+    <element name="statement" rule_type="statement"/>
   </complex_type>
   <complex_type name="algorithm_section">
-    <element name="statement_block" type="statement_block"/>
+    <element name="statement_block" rule_type="statement_block"/>
   </complex_type>
   <complex_type name="equation_options">
-    <element name="simple_expression" type="simple_expression"/>
-    <element name="expression" type="expression"/>
-    <element name="if_equation" type="if_equation"/>
-    <element name="for_equation" type="for_equation"/>
-    <element name="connect_clause" type="connect_clause"/>
-    <element name="when_equation" type="when_equation"/>
-    <element name="name" type="name"/>
-    <element name="function_call_args" type="function_call_args"/>
+    <element name="simple_expression" rule_type="simple_expression"/>
+    <element name="expression" rule_type="expression"/>
+    <element name="if_equation" rule_type="if_equation"/>
+    <element name="for_equation" rule_type="for_equation"/>
+    <element name="connect_clause" rule_type="connect_clause"/>
+    <element name="when_equation" rule_type="when_equation"/>
+    <element name="name" rule_type="name"/>
+    <element name="function_call_args" rule_type="function_call_args"/>
   </complex_type>
   <complex_type name="equation">
-    <element name="equation_options" type="equation_options"/>
-    <element name="comment" type="comment"/>
+    <element name="equation_options" rule_type="equation_options"/>
+    <element name="comment" rule_type="comment"/>
   </complex_type>
   <complex_type name="statement_options" min_occurs="2" max_occurs="2">
-    <element name="component_reference" type="component_reference"/>
-    <element name="expression" type="expression"/>
-    <element name="function_call_args" type="function_call_args"/>
-    <element name="if_statement" type="if_statement"/>
-    <element name="for_statement" type="for_statement"/>
-    <element name="while_statement" type="while_statement"/>
-    <element name="when_statement" type="when_statement"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="expression" rule_type="expression"/>
+    <element name="function_call_args" rule_type="function_call_args"/>
+    <element name="if_statement" rule_type="if_statement"/>
+    <element name="for_statement" rule_type="for_statement"/>
+    <element name="while_statement" rule_type="while_statement"/>
+    <element name="when_statement" rule_type="when_statement"/>
   </complex_type>
   <complex_type name="statement">
-    <element name="statement_options" type="statement_options"/>
-    <element name="comment" type="comment"/>
+    <element name="statement_options" rule_type="statement_options"/>
+    <element name="comment" rule_type="comment"/>
   </complex_type>
   <complex_type name="if_equation" min_occurs="1" max_occurs="unbounded">
-    <element name="expression" type="expression"/>
-    <element name="equation_block" type="equation_block"/>
+    <element name="expression" rule_type="expression"/>
+    <element name="equation_block" rule_type="equation_block"/>
   </complex_type>
   <complex_type name="if_statement" min_occurs="1" max_occurs="unbounded">
-    <element name="expression" type="expression"/>
-    <element name="statement_block" type="statement_block"/>
+    <element name="expression" rule_type="expression"/>
+    <element name="statement_block" rule_type="statement_block"/>
   </complex_type>
   <complex_type name="for_equation">
-    <element name="for_indices" type="for_indices"/>
-    <element name="equation_block" type="equation_block"/>
+    <element name="for_indices" rule_type="for_indices"/>
+    <element name="equation_block" rule_type="equation_block"/>
   </complex_type>
   <complex_type name="for_statement">
-    <element name="for_indices" type="for_indices"/>
-    <element name="statement_block" type="statement_block"/>
+    <element name="for_indices" rule_type="for_indices"/>
+    <element name="statement_block" rule_type="statement_block"/>
   </complex_type>
   <complex_type name="for_indices" min_occurs="1" max_occurs="unbounded">
-    <element name="for_index" type="for_index"/>
+    <element name="for_index" rule_type="for_index"/>
   </complex_type>
   <complex_type name="for_index" min_occurs="0" max_occurs="1">
-    <element name="expression" type="expression"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="while_statement">
-    <element name="expression" type="expression"/>
-    <element name="statement_block" type="statement_block"/>
+    <element name="expression" rule_type="expression"/>
+    <element name="statement_block" rule_type="statement_block"/>
   </complex_type>
   <complex_type name="when_equation" min_occurs="1" max_occurs="unbounded">
-    <element name="expression" type="expression"/>
-    <element name="equation_block" type="equation_block"/>
+    <element name="expression" rule_type="expression"/>
+    <element name="equation_block" rule_type="equation_block"/>
   </complex_type>
   <complex_type name="when_statement" min_occurs="1" max_occurs="unbounded">
-    <element name="expression" type="expression"/>
-    <element name="statement_block" type="statement_block"/>
+    <element name="expression" rule_type="expression"/>
+    <element name="statement_block" rule_type="statement_block"/>
   </complex_type>
   <complex_type name="connect_clause" min_occurs="2" max_occurs="2">
-    <element name="component_reference" type="component_reference"/>
+    <element name="component_reference" rule_type="component_reference"/>
   </complex_type>
   <complex_type name="expression" min_occurs="3" max_occurs="unbounded">
-    <element name="simple_expression" type="simple_expression"/>
-    <element name="expression" type="expression"/>
+    <element name="simple_expression" rule_type="simple_expression"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="simple_expression" min_occurs="1" max_occurs="3">
-    <element name="expr" type="expr"/>
+    <element name="expr" rule_type="expr"/>
   </complex_type>
   <complex_type name="expr" min_occurs="3" max_occurs="3">
-    <element name="expr" type="expr"/>
-    <element name="primary" type="primary"/>
+    <element name="expr" rule_type="expr"/>
+    <element name="primary" rule_type="primary"/>
   </complex_type>
   <complex_type name="primary" min_occurs="1" max_occurs="unbounded">
-    <element name="component_reference" type="component_reference"/>
-    <element name="function_call_args" type="function_call_args"/>
-    <element name="output_expression_list" type="output_expression_list"/>
-    <element name="expression_list" type="expression_list"/>
-    <element name="function_arguments" type="function_arguments"/>
+    <element name="component_reference" rule_type="component_reference"/>
+    <element name="function_call_args" rule_type="function_call_args"/>
+    <element name="output_expression_list" rule_type="output_expression_list"/>
+    <element name="expression_list" rule_type="expression_list"/>
+    <element name="function_arguments" rule_type="function_arguments"/>
   </complex_type>
   <complex_type name="name"/>
   <complex_type name="component_reference_element">
-    <element name="array_subscripts" type="array_subscripts"/>
+    <element name="array_subscripts" rule_type="array_subscripts"/>
   </complex_type>
   <complex_type name="component_reference" min_occurs="1" max_occurs="unbounded">
-    <element name="component_reference_element" type="component_reference_element"/>
+    <element name="component_reference_element" rule_type="component_reference_element"/>
   </complex_type>
   <complex_type name="function_call_args">
-    <element name="function_arguments" type="function_arguments"/>
+    <element name="function_arguments" rule_type="function_arguments"/>
   </complex_type>
   <complex_type name="function_arguments" min_occurs="0" max_occurs="unbounded">
-    <element name="function_argument" type="function_argument"/>
-    <element name="for_indices" type="for_indices"/>
-    <element name="named_arguments" type="named_arguments"/>
+    <element name="function_argument" rule_type="function_argument"/>
+    <element name="for_indices" rule_type="for_indices"/>
+    <element name="named_arguments" rule_type="named_arguments"/>
   </complex_type>
   <complex_type name="named_arguments" min_occurs="1" max_occurs="unbounded">
-    <element name="named_argument" type="named_argument"/>
+    <element name="named_argument" rule_type="named_argument"/>
   </complex_type>
   <complex_type name="named_argument">
-    <element name="function_argument" type="function_argument"/>
+    <element name="function_argument" rule_type="function_argument"/>
   </complex_type>
   <complex_type name="function_argument">
-    <element name="name" type="name"/>
-    <element name="named_arguments" type="named_arguments"/>
-    <element name="expression" type="expression"/>
+    <element name="name" rule_type="name"/>
+    <element name="named_arguments" rule_type="named_arguments"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="output_expression_list" min_occurs="1" max_occurs="unbounded">
-    <element name="expression" type="expression"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="expression_list" min_occurs="1" max_occurs="unbounded">
-    <element name="expression" type="expression"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="array_subscripts" min_occurs="1" max_occurs="unbounded">
-    <element name="subscript" type="subscript"/>
+    <element name="subscript" rule_type="subscript"/>
   </complex_type>
   <complex_type name="subscript">
-    <element name="expression" type="expression"/>
+    <element name="expression" rule_type="expression"/>
   </complex_type>
   <complex_type name="comment">
-    <element name="string_comment" type="string_comment"/>
-    <element name="annotation" type="annotation"/>
+    <element name="string_comment" rule_type="string_comment"/>
+    <element name="annotation" rule_type="annotation"/>
   </complex_type>
   <complex_type name="string_comment"/>
   <complex_type name="annotation">
-    <element name="class_modification" type="class_modification"/>
+    <element name="class_modification" rule_type="class_modification"/>
   </complex_type>
 </schema>

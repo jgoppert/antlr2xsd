@@ -118,7 +118,8 @@ def parse_g4(g4_path):
     listener = Listener()
     parse_walker = antlr4.ParseTreeWalker()
     parse_walker.walk(listener, parse_tree)
-    return listener.src[parse_tree]
+    data = listener.src[parse_tree]
+    return data
 
 
 def to_xsd(data):
@@ -142,5 +143,5 @@ def to_xsd(data):
                 continue
             rule_type.attrib['min_occurs'] = min_val
             rule_type.attrib['max_occurs'] = max_val
-        root.append(type)
+        root.append(rule_type)
     return root
