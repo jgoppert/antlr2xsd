@@ -1,1 +1,79 @@
-generated/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+*.dll
+*.dylib
+
+# Distribution / packaging
+.Python
+env/
+build/
+bin/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# ply
+*_parsetab.py*
+
+# version
+.coveralls.yml
+
+# vi
+*.swp
+
+.ipynb_checkpoints
+
+# IDE
+.idea/workspace
+
+# virtual environments
+venv/
+venv3/
+
+Untitled.ipynb
+.pytest_cache/
+jit_tmp.c
+tmp*.o
+*.orig
+
+src/antlr2xsd/generated

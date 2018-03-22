@@ -1,0 +1,2 @@
+include versioneer.py
+include src/antlr2xsd/_version.py
