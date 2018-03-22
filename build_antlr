@@ -6,14 +6,8 @@ antlr_path=$PWD/java/antlr-4.7.1-complete.jar
 rm -rf $gen_dir
 mkdir -p $gen_dir
 pushd antlr4
-files_python="ANTLRv4LexerPython.g4 LexBasic.g4 ANTLRv4Parser.g4"
-#files_java="ANTLRv4Lexer.g4 LexBasic.g4 ANTLRv4Parser.g4"
+files_python="ANTLRv4Lexer.g4 LexBasic.g4 ANTLRv4Parser.g4"
 java -Xmx500M -cp .:$antlr_path:$CLASSPATH org.antlr.v4.Tool $files_python -o $gen_dir -Dlanguage=Python3
-#java -Xmx500M -cp .:$antlr_path:$CLASSPATH org.antlr.v4.Tool $files_java -o $gen_dir -Dlanguage=Java
-#cp *.java $gen_dir
 popd
-#pushd $gen_dir
-#javac -cp .:$gen_dir:$antlr_path:$CLASSPATH *.java
-#popd
 
 
