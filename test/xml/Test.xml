@@ -1,6 +1,10 @@
 <pym:modelica xmlns:pym="http://www.pymoca.com/Pymoca">
-    <component_reference>
-        <component_reference_element>
-        </component_reference_element>
-    </component_reference>
+    <stored_definition_class>
+        <class_definition>
+            <class_prefixes>
+                <class_type/>
+            </class_prefixes>
+            <class_specifier/>
+        </class_definition>
+    </stored_definition_class>
 </pym:modelica>

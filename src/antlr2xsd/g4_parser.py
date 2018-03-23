@@ -45,14 +45,7 @@ class Listener(ANTLRv4ParserListener):
         self.src[ctx] = elem
 
     def exitParserRuleSpec(self, ctx: ANTLRv4Parser.RuleSpecContext):
-        ebnf = self.scope['ebnf'].pop()
-        for k in ebnf.keys():
-            ref = ebnf[k]
-            if ref['max'] == inf:
-                ref['max'] = 'unbounded'
-            ref['min'] = str(ref['min'])
-            ref['max'] = str(ref['max'])
-            self.scope['rule']['refs'][k] = ref
+        self.scope['rule']['refs'].update(self.scope['ebnf'].pop())
         self.scope['root']['rules'].append(self.scope['rule'])
 
     def enterEbnf(self, ctx: ANTLRv4Parser.EbnfContext):
@@ -102,6 +95,26 @@ class Listener(ANTLRv4ParserListener):
             'min': refs[rule_ref]['min'] + 1,
             'max': refs[rule_ref]['max'] + 1
         }
+
+    def enterLabeledAlt(self, ctx:ANTLRv4Parser.LabeledAltContext):
+        if ctx.identifier() is not None:
+            self.src[ctx] = {
+                'name': '',
+                'refs': {}
+            }
+            self.scope['ebnf'].append({})
+
+    def exitLabeledAlt(self, ctx:ANTLRv4Parser.LabeledAltContext):
+        if ctx.identifier() is not None:
+            rule_name = self.src[ctx.identifier()]
+            print('new rule', rule_name)
+            rule = self.src[ctx]
+            rule['name'] = rule_name
+            rule['refs'].update(self.scope['ebnf'].pop())
+            self.scope['root']['rules'].append(rule)
+
+    def exitIdentifier(self, ctx:ANTLRv4Parser.IdentifierContext):
+        self.src[ctx] = ctx.getText()
 
     def exitRuleAltList(self, ctx: ANTLRv4Parser.RuleAltListContext):
         # TODO add choice

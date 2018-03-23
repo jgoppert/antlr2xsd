@@ -4,12 +4,12 @@
       "name": "stored_definition",
       "refs": {
         "component_reference": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         },
         "stored_definition_class": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         }
       }
     },
@@ -17,8 +17,8 @@
       "name": "stored_definition_class",
       "refs": {
         "class_definition": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -26,12 +26,12 @@
       "name": "class_definition",
       "refs": {
         "class_prefixes": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "class_specifier": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -39,8 +39,8 @@
       "name": "class_prefixes",
       "refs": {
         "class_type": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -49,48 +49,92 @@
       "refs": {}
     },
     {
-      "name": "class_specifier",
+      "name": "class_spec_comp",
       "refs": {
         "string_comment": {
-          "min": "2",
-          "max": "2"
+          "min": 1,
+          "max": 1
         },
         "composition": {
-          "min": "2",
-          "max": "2"
-        },
-        "base_prefix": {
-          "min": "1",
-          "max": "1"
-        },
-        "component_reference": {
-          "min": "1",
-          "max": "1"
-        },
-        "class_modification": {
-          "min": "2",
-          "max": "2"
-        },
-        "comment": {
-          "min": "3",
-          "max": "3"
-        },
-        "enum_list": {
-          "min": "1",
-          "max": "1"
-        },
-        "name": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
+    },
+    {
+      "name": "class_spec_base",
+      "refs": {
+        "base_prefix": {
+          "min": 1,
+          "max": 1
+        },
+        "component_reference": {
+          "min": 1,
+          "max": 1
+        },
+        "class_modification": {
+          "min": 1,
+          "max": 1
+        },
+        "comment": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "class_spec_enum",
+      "refs": {
+        "enum_list": {
+          "min": 1,
+          "max": 1
+        },
+        "comment": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "class_spec_der",
+      "refs": {
+        "name": {
+          "min": 1,
+          "max": 1
+        },
+        "comment": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "class_spec_extends",
+      "refs": {
+        "class_modification": {
+          "min": 1,
+          "max": 1
+        },
+        "string_comment": {
+          "min": 1,
+          "max": 1
+        },
+        "composition": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "class_specifier",
+      "refs": {}
     },
     {
       "name": "base_prefix",
       "refs": {
         "type_prefix": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -98,8 +142,8 @@
       "name": "enum_list",
       "refs": {
         "enumeration_literal": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -107,8 +151,8 @@
       "name": "enumeration_literal",
       "refs": {
         "comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -116,28 +160,28 @@
       "name": "composition",
       "refs": {
         "element_list": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         },
         "equation_section": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         },
         "algorithm_section": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         },
         "language_specification": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         },
         "external_function_call": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         },
         "annotation": {
-          "min": "0",
-          "max": "2"
+          "min": 0,
+          "max": 2
         }
       }
     },
@@ -149,12 +193,12 @@
       "name": "external_function_call",
       "refs": {
         "component_reference": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         },
         "expression_list": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -162,8 +206,8 @@
       "name": "element_list",
       "refs": {
         "element": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         }
       }
     },
@@ -171,20 +215,20 @@
       "name": "element",
       "refs": {
         "import_clause": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "extends_clause": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "regular_element": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "replaceable_element": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -192,12 +236,12 @@
       "name": "regular_element",
       "refs": {
         "class_definition": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "component_clause": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -205,20 +249,20 @@
       "name": "replaceable_element",
       "refs": {
         "class_definition": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "component_clause": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "constraining_clause": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         },
         "comment": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         }
       }
     },
@@ -226,16 +270,16 @@
       "name": "import_clause",
       "refs": {
         "component_reference": {
-          "min": "2",
-          "max": "2"
+          "min": 2,
+          "max": 2
         },
         "import_list": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         },
         "comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -243,8 +287,8 @@
       "name": "import_list",
       "refs": {
         "import_list": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         }
       }
     },
@@ -252,16 +296,16 @@
       "name": "extends_clause",
       "refs": {
         "component_reference": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "class_modification": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "annotation": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -269,12 +313,12 @@
       "name": "constraining_clause",
       "refs": {
         "name": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "class_modification": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -282,20 +326,20 @@
       "name": "component_clause",
       "refs": {
         "type_prefix": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "type_specifier": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "array_subscripts": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "component_list": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -311,8 +355,8 @@
       "name": "type_specifier",
       "refs": {
         "type_specifier_element": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -320,8 +364,8 @@
       "name": "component_list",
       "refs": {
         "component_declaration": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -329,16 +373,16 @@
       "name": "component_declaration",
       "refs": {
         "declaration": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "condition_attribute": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -346,8 +390,8 @@
       "name": "condition_attribute",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -355,34 +399,56 @@
       "name": "declaration",
       "refs": {
         "array_subscripts": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "modification": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "modification_class",
+      "refs": {
+        "class_modification": {
+          "min": 1,
+          "max": 1
+        },
+        "expression": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "modification_assignment",
+      "refs": {
+        "expression": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "modification_assignment2",
+      "refs": {
+        "expression": {
+          "min": 1,
+          "max": 1
         }
       }
     },
     {
       "name": "modification",
-      "refs": {
-        "class_modification": {
-          "min": "1",
-          "max": "1"
-        },
-        "expression": {
-          "min": "2",
-          "max": "3"
-        }
-      }
+      "refs": {}
     },
     {
       "name": "class_modification",
       "refs": {
         "argument_list": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -390,8 +456,8 @@
       "name": "argument_list",
       "refs": {
         "argument": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -399,12 +465,12 @@
       "name": "argument",
       "refs": {
         "element_modification_or_replaceable": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "element_redeclaration": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -412,12 +478,12 @@
       "name": "element_modification_or_replaceable",
       "refs": {
         "element_modification": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "element_replaceable": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -425,16 +491,16 @@
       "name": "element_modification",
       "refs": {
         "component_reference": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "modification": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "string_comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -442,16 +508,16 @@
       "name": "element_redeclaration",
       "refs": {
         "short_class_definition": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "component_clause1": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "element_replaceable": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -459,16 +525,16 @@
       "name": "element_replaceable",
       "refs": {
         "short_class_definition": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "component_clause1": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "constraining_clause": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -476,16 +542,16 @@
       "name": "component_clause1",
       "refs": {
         "type_prefix": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "type_specifier": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "component_declaration1": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -493,12 +559,12 @@
       "name": "component_declaration1",
       "refs": {
         "declaration": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -506,32 +572,32 @@
       "name": "short_class_definition",
       "refs": {
         "class_prefixes": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "base_prefix": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "component_reference": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "array_subscripts": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "class_modification": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "comment": {
-          "min": "2",
-          "max": "2"
+          "min": 2,
+          "max": 2
         },
         "enum_list": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -539,8 +605,8 @@
       "name": "equation_block",
       "refs": {
         "equation": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         }
       }
     },
@@ -548,8 +614,8 @@
       "name": "equation_section",
       "refs": {
         "equation_block": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -557,8 +623,8 @@
       "name": "statement_block",
       "refs": {
         "statement": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         }
       }
     },
@@ -566,104 +632,178 @@
       "name": "algorithm_section",
       "refs": {
         "statement_block": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "equation_simple",
+      "refs": {
+        "simple_expression": {
+          "min": 1,
+          "max": 1
+        },
+        "expression": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "equation_if",
+      "refs": {
+        "if_equation": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "equation_for",
+      "refs": {
+        "for_equation": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "equation_connect_clause",
+      "refs": {
+        "connect_clause": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "equation_when",
+      "refs": {
+        "when_equation": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "equation_function",
+      "refs": {
+        "name": {
+          "min": 1,
+          "max": 1
+        },
+        "function_call_args": {
+          "min": 1,
+          "max": 1
         }
       }
     },
     {
       "name": "equation_options",
-      "refs": {
-        "simple_expression": {
-          "min": "1",
-          "max": "1"
-        },
-        "expression": {
-          "min": "1",
-          "max": "1"
-        },
-        "if_equation": {
-          "min": "1",
-          "max": "1"
-        },
-        "for_equation": {
-          "min": "1",
-          "max": "1"
-        },
-        "connect_clause": {
-          "min": "1",
-          "max": "1"
-        },
-        "when_equation": {
-          "min": "1",
-          "max": "1"
-        },
-        "name": {
-          "min": "1",
-          "max": "1"
-        },
-        "function_call_args": {
-          "min": "1",
-          "max": "1"
-        }
-      }
+      "refs": {}
     },
     {
       "name": "equation",
       "refs": {
         "equation_options": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "statement_component_reference",
+      "refs": {
+        "component_reference": {
+          "min": 1,
+          "max": 1
+        },
+        "expression": {
+          "min": 1,
+          "max": 1
+        },
+        "function_call_args": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "statement_component_function",
+      "refs": {
+        "component_reference": {
+          "min": 2,
+          "max": Infinity
+        },
+        "function_call_args": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "statement_break",
+      "refs": {}
+    },
+    {
+      "name": "statement_return",
+      "refs": {}
+    },
+    {
+      "name": "statement_if",
+      "refs": {
+        "if_statement": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "statement_for",
+      "refs": {
+        "for_statement": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "statement_while",
+      "refs": {
+        "while_statement": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "statement_when",
+      "refs": {
+        "when_statement": {
+          "min": 1,
+          "max": 1
         }
       }
     },
     {
       "name": "statement_options",
-      "refs": {
-        "component_reference": {
-          "min": "3",
-          "max": "unbounded"
-        },
-        "expression": {
-          "min": "1",
-          "max": "1"
-        },
-        "function_call_args": {
-          "min": "2",
-          "max": "2"
-        },
-        "if_statement": {
-          "min": "1",
-          "max": "1"
-        },
-        "for_statement": {
-          "min": "1",
-          "max": "1"
-        },
-        "while_statement": {
-          "min": "1",
-          "max": "1"
-        },
-        "when_statement": {
-          "min": "1",
-          "max": "1"
-        }
-      }
+      "refs": {}
     },
     {
       "name": "statement",
       "refs": {
         "statement_options": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -671,12 +811,12 @@
       "name": "if_equation",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         },
         "equation_block": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -684,12 +824,12 @@
       "name": "if_statement",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         },
         "statement_block": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -697,12 +837,12 @@
       "name": "for_equation",
       "refs": {
         "for_indices": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "equation_block": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -710,12 +850,12 @@
       "name": "for_statement",
       "refs": {
         "for_indices": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "statement_block": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -723,8 +863,8 @@
       "name": "for_indices",
       "refs": {
         "for_index": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -732,8 +872,8 @@
       "name": "for_index",
       "refs": {
         "expression": {
-          "min": "0",
-          "max": "1"
+          "min": 0,
+          "max": 1
         }
       }
     },
@@ -741,12 +881,12 @@
       "name": "while_statement",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "statement_block": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -754,12 +894,12 @@
       "name": "when_equation",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         },
         "equation_block": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -767,12 +907,12 @@
       "name": "when_statement",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         },
         "statement_block": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -780,70 +920,217 @@
       "name": "connect_clause",
       "refs": {
         "component_reference": {
-          "min": "2",
-          "max": "2"
+          "min": 2,
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "expression_simple",
+      "refs": {
+        "simple_expression": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "expression_if",
+      "refs": {
+        "expression": {
+          "min": 3,
+          "max": Infinity
         }
       }
     },
     {
       "name": "expression",
-      "refs": {
-        "simple_expression": {
-          "min": "1",
-          "max": "1"
-        },
-        "expression": {
-          "min": "3",
-          "max": "unbounded"
-        }
-      }
+      "refs": {}
     },
     {
       "name": "simple_expression",
       "refs": {
         "expr": {
-          "min": "1",
-          "max": "3"
+          "min": 1,
+          "max": 3
+        }
+      }
+    },
+    {
+      "name": "expr_neg",
+      "refs": {
+        "expr": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "expr_exp",
+      "refs": {
+        "primary": {
+          "min": 2,
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "expr_mul",
+      "refs": {
+        "expr": {
+          "min": 2,
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "expr_add",
+      "refs": {
+        "expr": {
+          "min": 2,
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "expr_rel",
+      "refs": {
+        "expr": {
+          "min": 2,
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "expr_not",
+      "refs": {
+        "expr": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "expr_and",
+      "refs": {
+        "expr": {
+          "min": 2,
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "expr_or",
+      "refs": {
+        "expr": {
+          "min": 2,
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "expr_primary",
+      "refs": {
+        "primary": {
+          "min": 1,
+          "max": 1
         }
       }
     },
     {
       "name": "expr",
+      "refs": {}
+    },
+    {
+      "name": "primary_unsigned_number",
+      "refs": {}
+    },
+    {
+      "name": "primary_string",
+      "refs": {}
+    },
+    {
+      "name": "primary_false",
+      "refs": {}
+    },
+    {
+      "name": "primary_true",
+      "refs": {}
+    },
+    {
+      "name": "primary_function",
       "refs": {
-        "expr": {
-          "min": "12",
-          "max": "12"
+        "component_reference": {
+          "min": 1,
+          "max": 1
         },
-        "primary": {
-          "min": "3",
-          "max": "3"
+        "function_call_args": {
+          "min": 1,
+          "max": 1
         }
       }
     },
     {
-      "name": "primary",
+      "name": "primary_derivative",
       "refs": {
-        "component_reference": {
-          "min": "2",
-          "max": "2"
-        },
         "function_call_args": {
-          "min": "3",
-          "max": "3"
-        },
-        "output_expression_list": {
-          "min": "1",
-          "max": "1"
-        },
-        "expression_list": {
-          "min": "1",
-          "max": "unbounded"
-        },
-        "function_arguments": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
+    },
+    {
+      "name": "primary_initial",
+      "refs": {
+        "function_call_args": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "primary_component_reference",
+      "refs": {
+        "component_reference": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "primary_output_expression_list",
+      "refs": {
+        "output_expression_list": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "primary_expression_list",
+      "refs": {
+        "expression_list": {
+          "min": 1,
+          "max": Infinity
+        }
+      }
+    },
+    {
+      "name": "primary_function_arguments",
+      "refs": {
+        "function_arguments": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "primary_end",
+      "refs": {}
+    },
+    {
+      "name": "primary",
+      "refs": {}
     },
     {
       "name": "name",
@@ -853,8 +1140,8 @@
       "name": "component_reference_element",
       "refs": {
         "array_subscripts": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -862,8 +1149,8 @@
       "name": "component_reference",
       "refs": {
         "component_reference_element": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -871,8 +1158,8 @@
       "name": "function_call_args",
       "refs": {
         "function_arguments": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -880,16 +1167,16 @@
       "name": "function_arguments",
       "refs": {
         "function_argument": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         },
         "for_indices": {
-          "min": "0",
-          "max": "unbounded"
+          "min": 0,
+          "max": Infinity
         },
         "named_arguments": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -897,8 +1184,8 @@
       "name": "named_arguments",
       "refs": {
         "named_argument": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -906,34 +1193,43 @@
       "name": "named_argument",
       "refs": {
         "function_argument": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "argument_function",
+      "refs": {
+        "name": {
+          "min": 1,
+          "max": 1
+        },
+        "named_arguments": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "argument_expression",
+      "refs": {
+        "expression": {
+          "min": 1,
+          "max": 1
         }
       }
     },
     {
       "name": "function_argument",
-      "refs": {
-        "name": {
-          "min": "1",
-          "max": "1"
-        },
-        "named_arguments": {
-          "min": "1",
-          "max": "1"
-        },
-        "expression": {
-          "min": "1",
-          "max": "1"
-        }
-      }
+      "refs": {}
     },
     {
       "name": "output_expression_list",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -941,8 +1237,8 @@
       "name": "expression_list",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -950,8 +1246,8 @@
       "name": "array_subscripts",
       "refs": {
         "subscript": {
-          "min": "1",
-          "max": "unbounded"
+          "min": 1,
+          "max": Infinity
         }
       }
     },
@@ -959,8 +1255,8 @@
       "name": "subscript",
       "refs": {
         "expression": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -968,12 +1264,12 @@
       "name": "comment",
       "refs": {
         "string_comment": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         },
         "annotation": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     },
@@ -985,8 +1281,8 @@
       "name": "annotation",
       "refs": {
         "class_modification": {
-          "min": "1",
-          "max": "1"
+          "min": 1,
+          "max": 1
         }
       }
     }
