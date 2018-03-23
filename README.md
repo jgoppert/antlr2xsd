@@ -5,7 +5,7 @@ This is primarily useful for when you are mapping an ANTLR defined language to X
 
 See [test](test/test.py) for Modelica that converts a [Modelica.g4](test/g4/Modelica.g4) file to an [Pymoca.xsd](test/output/Pymoca.xsd) file.
 
-Note that to make ANTLR preview work well with pycharm, LexAdaptor is disabled. The consequence is that you must just pass the parse rules of your g4 file for now.
+Note that to make ANTLR preview work well with pycharm, LexAdaptor is disabled. The consequence is that you must just pass the parse rules of your g4 file for now. This doesn't negatively effect the parsing, since we are just paring the g4 parser rules, so we don't care about the lexer. Things like STRING etc, will just be mapped to user defined types.
 
 ### Roadmap
 * [x] Read grammar rules and count multiplicity of rule references
