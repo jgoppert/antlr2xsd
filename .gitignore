@@ -64,7 +64,7 @@ docs/_build/
 .ipynb_checkpoints
 
 # IDE
-.idea/workspace
+.idea/workspace.xml
 
 # virtual environments
 venv/
