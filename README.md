@@ -1,5 +1,5 @@
 # antlr2xsd
-Converts ANTLR g4 grammar to XSD for XML
+Converts ANTLR g4 grammar to XSD (XML schemas)
 
 This is primarily useful for when you are mapping an ANTLR defined language to XML. There may also be a generic AST creation backend eventually that takes the same data and creates sane python classes to hold the information that is parsed from ANTLR. Another alternative would be to use XML bindings to generate an AST after the XML is created, but this might note be flexible enough for my goal. The overall motivation of this project is to create an XML representation of the [Pymoca](www.pymoca.com) Modelica compiler, but others may also find it useful.
 
