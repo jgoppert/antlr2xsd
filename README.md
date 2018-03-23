@@ -8,5 +8,6 @@ Note that to make ANTLR preview work well with pycharm, LexAdaptor is disabled. 
 ### Roadmap
 * [x] Read grammar rules and count multiplicity of rule references
 * [ ] For alternatives, add choices
+* [ ] Ignore non-optional tokens (e.g. '=' in equation), but keep optional tokens (e.g. 'fixed'), since they hold information if present or not.
 * [ ] Convert types with no rule references to simple types
 * [ ] Handle how to map lexer tokens to XSD types, user passed dict?
