@@ -8,4 +8,5 @@ Note that to make ANTLR preview work well with pycharm, LexAdaptor is disabled. 
 ### Roadmap
 * [x] Read grammar rules and count multiplicity of rule references
 * [ ] For alternatives, add choices
+* [ ] Convert types with no rule references to simple types
 * [ ] Handle how to map lexer tokens to XSD types, user passed dict?
