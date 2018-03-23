@@ -34,7 +34,7 @@ class Listener(ANTLRv4ParserListener):
         self.src[ctx] = elem
 
     def enterParserRuleSpec(self, ctx: ANTLRv4Parser.ParserRuleSpecContext):
-        elem = g4.Rule(name=str(ctx.RULE_REF()))
+        elem = g4.Type(name=str(ctx.RULE_REF()))
         self.scope['rule'].append(elem)
         self.src[ctx] = elem
 
@@ -42,7 +42,7 @@ class Listener(ANTLRv4ParserListener):
         self.scope['root'].rules.append(self.scope['rule'].pop())
 
     @staticmethod
-    def handle_suffix(rule: g4.Rule, suffix: str):
+    def handle_suffix(rule: g4.Type, suffix: str):
         for ref in rule.refs:
             if suffix == "?":
                 rule.refs[ref].min_occurs = 0
@@ -75,13 +75,15 @@ class Listener(ANTLRv4ParserListener):
         rule = self.scope['rule'][-1]
         ref = str(ctx.RULE_REF())
         if ref not in rule.refs:
-            rule.refs[ref] = g4.RuleRef(min_occurs=0, max_occurs=0)
+            rule.refs[ref] = g4.TypeRef(
+                name=ref,
+                min_occurs=0, max_occurs=0)
         rule.refs[ref].min_occurs += 1
         rule.refs[ref].max_occurs += 1
 
     def enterLabeledAlt(self, ctx: ANTLRv4Parser.LabeledAltContext):
         if ctx.identifier() is not None:
-            self.scope['rule'].append(g4.Rule('unknown'))
+            self.scope['rule'].append(g4.Type('unknown'))
 
     def exitLabeledAlt(self, ctx: ANTLRv4Parser.LabeledAltContext):
         if ctx.identifier() is not None:
