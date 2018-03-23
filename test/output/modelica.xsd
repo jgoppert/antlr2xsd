@@ -1,4 +1,4 @@
-<schema>
+<xsd>
   <complex_type name="stored_definition" min_occurs="0" max_occurs="unbounded">
     <element name="component_reference" rule_type="component_reference"/>
     <element name="stored_definition_class" rule_type="stored_definition_class"/>
@@ -299,4 +299,4 @@
   <complex_type name="annotation">
     <element name="class_modification" rule_type="class_modification"/>
   </complex_type>
-</schema>
+</xsd>

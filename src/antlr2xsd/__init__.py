@@ -112,7 +112,7 @@ class Listener(ANTLRv4ParserListener):
 
 def parse_g4(g4_path):
     """
-    Parse a g4 file and return a JSON structure with
+    Parse a g4 file and return a dict (JSON serializable) structure with
     data for XSD
     """
     input_stream = antlr4.FileStream(g4_path)
@@ -127,12 +127,14 @@ def parse_g4(g4_path):
     return data
 
 
-def to_xsd(data):
+def to_xsd(data: dict) -> etree.ElementTree:
     """
-    Take a json XML file from parse_g4 and
+    Takes a data dict from parse_g4 and
     convert it to an XSD
     """
-    root = etree.Element('schema')
+    from xml.etree import ElementTree as ET
+    ET.register_namespace('com', "http://www.company.com")  # some name
+    root = etree.Element('xsd')  # type: etree._Element
     for rule in data['rules']:
         rule_type = etree.Element(
             'complex_type',
@@ -144,4 +146,5 @@ def to_xsd(data):
             rule_type.attrib['min_occurs'] = ref['min']
             rule_type.attrib['max_occurs'] = ref['max']
         root.append(rule_type)
-    return root
+    return ET.ElementTree(root)
+
