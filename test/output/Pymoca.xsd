@@ -33,15 +33,15 @@
   </xs:complexType>
   <xs:complexType name="class_spec_base">
     <xs:sequence>
-      <xs:element name="base_prefix" type="base_prefix"/>
-      <xs:element name="component_reference" type="component_reference"/>
-      <xs:element name="class_modification" type="class_modification"/>
+      <xs:element name="base_prefix" type="base_prefix" minOccurs="0"/>
+      <xs:element name="component_reference" type="component_reference" minOccurs="0"/>
+      <xs:element name="class_modification" type="class_modification" minOccurs="0"/>
       <xs:element name="comment" type="comment"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="class_spec_enum">
     <xs:sequence>
-      <xs:element name="enum_list" type="enum_list"/>
+      <xs:element name="enum_list" type="enum_list" minOccurs="0"/>
       <xs:element name="comment" type="comment"/>
     </xs:sequence>
   </xs:complexType>
@@ -53,7 +53,7 @@
   </xs:complexType>
   <xs:complexType name="class_spec_extends">
     <xs:sequence>
-      <xs:element name="class_modification" type="class_modification"/>
+      <xs:element name="class_modification" type="class_modification" minOccurs="0"/>
       <xs:element name="string_comment" type="string_comment"/>
       <xs:element name="composition" type="composition"/>
     </xs:sequence>
@@ -92,7 +92,7 @@
   <xs:complexType name="external_function_call">
     <xs:sequence>
       <xs:element name="component_reference" type="component_reference" minOccurs="0"/>
-      <xs:element name="expression_list" type="expression_list"/>
+      <xs:element name="expression_list" type="expression_list" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="element_list">
@@ -136,22 +136,22 @@
   </xs:complexType>
   <xs:complexType name="extends_clause">
     <xs:sequence>
-      <xs:element name="component_reference" type="component_reference"/>
-      <xs:element name="class_modification" type="class_modification"/>
-      <xs:element name="annotation" type="annotation"/>
+      <xs:element name="component_reference" type="component_reference" minOccurs="0"/>
+      <xs:element name="class_modification" type="class_modification" minOccurs="0"/>
+      <xs:element name="annotation" type="annotation" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="constraining_clause">
     <xs:sequence>
-      <xs:element name="name" type="name"/>
-      <xs:element name="class_modification" type="class_modification"/>
+      <xs:element name="name" type="name" minOccurs="0"/>
+      <xs:element name="class_modification" type="class_modification" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="component_clause">
     <xs:sequence>
-      <xs:element name="type_prefix" type="type_prefix"/>
-      <xs:element name="type_specifier" type="type_specifier"/>
-      <xs:element name="array_subscripts" type="array_subscripts"/>
+      <xs:element name="type_prefix" type="type_prefix" minOccurs="0"/>
+      <xs:element name="type_specifier" type="type_specifier" minOccurs="0"/>
+      <xs:element name="array_subscripts" type="array_subscripts" minOccurs="0"/>
       <xs:element name="component_list" type="component_list"/>
     </xs:sequence>
   </xs:complexType>
@@ -173,8 +173,8 @@
   </xs:complexType>
   <xs:complexType name="component_declaration">
     <xs:sequence>
-      <xs:element name="declaration" type="declaration"/>
-      <xs:element name="condition_attribute" type="condition_attribute"/>
+      <xs:element name="declaration" type="declaration" minOccurs="0"/>
+      <xs:element name="condition_attribute" type="condition_attribute" minOccurs="0"/>
       <xs:element name="comment" type="comment"/>
     </xs:sequence>
   </xs:complexType>
@@ -185,8 +185,8 @@
   </xs:complexType>
   <xs:complexType name="declaration">
     <xs:sequence>
-      <xs:element name="array_subscripts" type="array_subscripts"/>
-      <xs:element name="modification" type="modification"/>
+      <xs:element name="array_subscripts" type="array_subscripts" minOccurs="0"/>
+      <xs:element name="modification" type="modification" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modification_class">
@@ -210,7 +210,7 @@
   </xs:complexType>
   <xs:complexType name="class_modification">
     <xs:sequence>
-      <xs:element name="argument_list" type="argument_list"/>
+      <xs:element name="argument_list" type="argument_list" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="argument_list">
@@ -232,8 +232,8 @@
   </xs:complexType>
   <xs:complexType name="element_modification">
     <xs:sequence>
-      <xs:element name="component_reference" type="component_reference"/>
-      <xs:element name="modification" type="modification"/>
+      <xs:element name="component_reference" type="component_reference" minOccurs="0"/>
+      <xs:element name="modification" type="modification" minOccurs="0"/>
       <xs:element name="string_comment" type="string_comment"/>
     </xs:sequence>
   </xs:complexType>
@@ -246,9 +246,9 @@
   </xs:complexType>
   <xs:complexType name="element_replaceable">
     <xs:sequence>
-      <xs:element name="short_class_definition" type="short_class_definition"/>
-      <xs:element name="component_clause1" type="component_clause1"/>
-      <xs:element name="constraining_clause" type="constraining_clause"/>
+      <xs:element name="short_class_definition" type="short_class_definition" minOccurs="0"/>
+      <xs:element name="component_clause1" type="component_clause1" minOccurs="0"/>
+      <xs:element name="constraining_clause" type="constraining_clause" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="component_clause1">
@@ -266,13 +266,13 @@
   </xs:complexType>
   <xs:complexType name="short_class_definition">
     <xs:sequence>
-      <xs:element name="class_prefixes" type="class_prefixes"/>
-      <xs:element name="base_prefix" type="base_prefix"/>
-      <xs:element name="component_reference" type="component_reference"/>
-      <xs:element name="array_subscripts" type="array_subscripts"/>
-      <xs:element name="class_modification" type="class_modification"/>
-      <xs:element name="comment" type="comment" minOccurs="2" maxOccurs="2"/>
-      <xs:element name="enum_list" type="enum_list"/>
+      <xs:element name="class_prefixes" type="class_prefixes" minOccurs="0"/>
+      <xs:element name="base_prefix" type="base_prefix" minOccurs="0"/>
+      <xs:element name="component_reference" type="component_reference" minOccurs="0"/>
+      <xs:element name="array_subscripts" type="array_subscripts" minOccurs="0"/>
+      <xs:element name="class_modification" type="class_modification" minOccurs="0"/>
+      <xs:element name="comment" type="comment" maxOccurs="2"/>
+      <xs:element name="enum_list" type="enum_list" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="equation_block">
@@ -566,7 +566,7 @@
   </xs:complexType>
   <xs:complexType name="component_reference_element">
     <xs:sequence>
-      <xs:element name="array_subscripts" type="array_subscripts"/>
+      <xs:element name="array_subscripts" type="array_subscripts" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="component_reference">
@@ -576,7 +576,7 @@
   </xs:complexType>
   <xs:complexType name="function_call_args">
     <xs:sequence>
-      <xs:element name="function_arguments" type="function_arguments"/>
+      <xs:element name="function_arguments" type="function_arguments" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="function_arguments">
@@ -598,8 +598,8 @@
   </xs:complexType>
   <xs:complexType name="argument_function">
     <xs:sequence>
-      <xs:element name="name" type="name"/>
-      <xs:element name="named_arguments" type="named_arguments"/>
+      <xs:element name="name" type="name" minOccurs="0"/>
+      <xs:element name="named_arguments" type="named_arguments" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="argument_expression">
@@ -632,8 +632,8 @@
   </xs:complexType>
   <xs:complexType name="comment">
     <xs:sequence>
-      <xs:element name="string_comment" type="string_comment"/>
-      <xs:element name="annotation" type="annotation"/>
+      <xs:element name="string_comment" type="string_comment" minOccurs="0"/>
+      <xs:element name="annotation" type="annotation" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="string_comment">

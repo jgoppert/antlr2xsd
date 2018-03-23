@@ -83,12 +83,12 @@
         "base_prefix": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "class_modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "comment": {
           "_type": "RuleRef",
@@ -98,7 +98,7 @@
         "component_reference": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -114,7 +114,7 @@
         "enum_list": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -141,7 +141,7 @@
         "class_modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "composition": {
           "_type": "RuleRef",
@@ -246,7 +246,7 @@
         "expression_list": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -368,17 +368,17 @@
         "annotation": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "class_modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "component_reference": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -389,12 +389,12 @@
         "class_modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "name": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -405,7 +405,7 @@
         "array_subscripts": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "component_list": {
           "_type": "RuleRef",
@@ -415,12 +415,12 @@
         "type_prefix": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "type_specifier": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -468,12 +468,12 @@
         "condition_attribute": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "declaration": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -495,12 +495,12 @@
         "array_subscripts": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -554,7 +554,7 @@
         "argument_list": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -608,12 +608,12 @@
         "component_reference": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "string_comment": {
           "_type": "RuleRef",
@@ -650,17 +650,17 @@
         "component_clause1": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "constraining_clause": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "short_class_definition": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -708,37 +708,37 @@
         "array_subscripts": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "base_prefix": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "class_modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "class_prefixes": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "comment": {
           "_type": "RuleRef",
           "max_occurs": 2,
-          "min_occurs": 2
+          "min_occurs": 1
         },
         "component_reference": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "enum_list": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1406,7 +1406,7 @@
         "array_subscripts": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1428,7 +1428,7 @@
         "function_arguments": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1482,12 +1482,12 @@
         "name": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "named_arguments": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1558,12 +1558,12 @@
         "annotation": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "string_comment": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },

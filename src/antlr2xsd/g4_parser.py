@@ -41,19 +41,29 @@ class Listener(ANTLRv4ParserListener):
     def exitParserRuleSpec(self, ctx: ANTLRv4Parser.RuleSpecContext):
         self.scope['root'].rules.append(self.scope['rule'].pop())
 
+    @staticmethod
+    def handle_suffix(rule: g4.Rule, suffix: str):
+        for ref in rule.refs:
+            if suffix == "?":
+                rule.refs[ref].min_occurs = 0
+            elif suffix == "+":
+                rule.refs[ref].min_occurs += 1
+                rule.refs[ref].max_occurs = inf
+            elif suffix == "*":
+                rule.refs[ref].min_occurs *= 0
+                rule.refs[ref].max_occurs *= inf
+
+    def exitElement(self, ctx:ANTLRv4Parser.ElementContext):
+        if ctx.ebnfSuffix() is not None:
+            suffix = self.src[ctx.ebnfSuffix()]
+            rule = self.scope['rule'][-1]
+            self.handle_suffix(rule, suffix)
+
     def exitEbnf(self, ctx: ANTLRv4Parser.EbnfContext):
         if ctx.blockSuffix() is not None:
             suffix = self.src[ctx.blockSuffix()]
             rule = self.scope['rule'][-1]
-            for ref in rule.refs:
-                if suffix == "?":
-                    rule.refs[ref].min_occurs = 0
-                elif suffix == "+":
-                    rule.refs[ref].min_occurs += 1
-                    rule.refs[ref].max_occurs = inf
-                elif suffix == "*":
-                    rule.refs[ref].min_occurs *= 0
-                    rule.refs[ref].max_occurs *= inf
+            self.handle_suffix(rule, suffix)
 
     def exitBlockSuffix(self, ctx: ANTLRv4Parser.BlockSuffixContext):
         self.src[ctx] = self.src[ctx.ebnfSuffix()]
