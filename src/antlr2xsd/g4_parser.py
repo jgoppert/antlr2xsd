@@ -11,11 +11,12 @@ sys.path.append(os.path.pardir)
 from antlr2xsd.generated.ANTLRv4Lexer import ANTLRv4Lexer  # noqa: E402, I100
 from antlr2xsd.generated.ANTLRv4Parser import ANTLRv4Parser  # noqa: E402
 from antlr2xsd.generated.ANTLRv4ParserListener import ANTLRv4ParserListener  # noqa: E402
+from . import g4_ast as g4
 
 
 class Listener(ANTLRv4ParserListener):
     """
-    Parses g4 file into a JSON structure
+    Parses g4 file into an AST
     with info for XSD
     """
 
@@ -29,24 +30,19 @@ class Listener(ANTLRv4ParserListener):
         self.src = {}
 
     def enterGrammarSpec(self, ctx: ANTLRv4Parser.GrammarSpecContext):
-        elem = {
-            'rules': []
-        }
+        elem = g4.Root()
         self.scope['root'] = elem
         self.src[ctx] = elem
 
     def enterParserRuleSpec(self, ctx: ANTLRv4Parser.ParserRuleSpecContext):
-        elem = {
-            'name': str(ctx.RULE_REF()),
-            'refs': {}
-        }
+        elem = g4.Rule(name=str(ctx.RULE_REF()))
         self.scope['ebnf'].append({})
         self.scope['rule'] = elem
         self.src[ctx] = elem
 
     def exitParserRuleSpec(self, ctx: ANTLRv4Parser.RuleSpecContext):
-        self.scope['rule']['refs'].update(self.scope['ebnf'].pop())
-        self.scope['root']['rules'].append(self.scope['rule'])
+        self.scope['rule'].refs.update(self.scope['ebnf'].pop())
+        self.scope['root'].rules.append(self.scope['rule'])
 
     def enterEbnf(self, ctx: ANTLRv4Parser.EbnfContext):
         self.scope['ebnf'].append({})
@@ -57,25 +53,22 @@ class Listener(ANTLRv4ParserListener):
             refs = self.scope['ebnf'][-1]
             if suffix == "?":
                 for ref in refs:
-                    refs[ref]['min'] = 0
+                    refs[ref].min_occurs = 0
             elif suffix == "+":
                 for ref in refs:
-                    refs[ref]['min'] += 1
-                    refs[ref]['max'] = inf
+                    refs[ref].min_occurs += 1
+                    refs[ref].max_occurs = inf
             elif suffix == "*":
                 for ref in refs:
-                    refs[ref]['min'] *= 0
-                    refs[ref]['max'] *= inf
+                    refs[ref].min_occurs *= 0
+                    refs[ref].max_occurs *= inf
         inner = self.scope['ebnf'].pop()
         outer = self.scope['ebnf'][-1]
         for k in inner.keys():
             if k not in outer.keys():
-                outer[k] = {
-                    'min': 0,
-                    'max': 0
-                }
-            outer[k]['min'] += inner[k]['min']
-            outer[k]['max'] += inner[k]['max']
+                outer[k] = g4.RuleRef(min_occurs=0, max_occurs=0)
+            outer[k].min_occurs += inner[k].min_occurs
+            outer[k].max_occurs += inner[k].max_occurs
 
     def exitBlockSuffix(self, ctx: ANTLRv4Parser.BlockSuffixContext):
         self.src[ctx] = self.src[ctx.ebnfSuffix()]
@@ -87,44 +80,33 @@ class Listener(ANTLRv4ParserListener):
         refs = self.scope['ebnf'][-1]
         rule_ref = str(ctx.RULE_REF())
         if rule_ref not in refs:
-            refs[rule_ref] = {
-                'min': 0,
-                'max': 0
-            }
-        refs[rule_ref] = {
-            'min': refs[rule_ref]['min'] + 1,
-            'max': refs[rule_ref]['max'] + 1
-        }
+            refs[rule_ref] = g4.RuleRef(min_occurs=0, max_occurs=0)
+        refs[rule_ref].min_occurs += 1
+        refs[rule_ref].max_occurs += 1
 
-    def enterLabeledAlt(self, ctx:ANTLRv4Parser.LabeledAltContext):
+    def enterLabeledAlt(self, ctx: ANTLRv4Parser.LabeledAltContext):
         if ctx.identifier() is not None:
-            self.src[ctx] = {
-                'name': '',
-                'refs': {}
-            }
             self.scope['ebnf'].append({})
 
-    def exitLabeledAlt(self, ctx:ANTLRv4Parser.LabeledAltContext):
+    def exitLabeledAlt(self, ctx: ANTLRv4Parser.LabeledAltContext):
         if ctx.identifier() is not None:
             rule_name = self.src[ctx.identifier()]
-            print('new rule', rule_name)
-            rule = self.src[ctx]
-            rule['name'] = rule_name
-            rule['refs'].update(self.scope['ebnf'].pop())
-            self.scope['root']['rules'].append(rule)
+            rule = g4.Rule(name=rule_name)
+            rule.refs.update(self.scope['ebnf'].pop())
+            self.scope['root'].rules.append(rule)
 
-    def exitIdentifier(self, ctx:ANTLRv4Parser.IdentifierContext):
+    def exitIdentifier(self, ctx: ANTLRv4Parser.IdentifierContext):
         self.src[ctx] = ctx.getText()
 
     def exitRuleAltList(self, ctx: ANTLRv4Parser.RuleAltListContext):
         # TODO add choice
-        pass
+        # print(len(ctx.labeledAlt()))
+        self.src[ctx] = g4.Choice()
 
 
 def parse(g4_path):
     """
-    Parse a g4 file and return a dict (JSON serializable) structure with
-    data for XSD
+    Parse a g4 file and return an AST for XSD
     """
     input_stream = antlr4.FileStream(g4_path)
     lexer = ANTLRv4Lexer(input_stream)

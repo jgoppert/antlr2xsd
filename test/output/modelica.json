@@ -1,1288 +1,1585 @@
 {
+  "_type": "Root",
   "rules": [
     {
+      "_type": "Rule",
       "name": "stored_definition",
       "refs": {
         "component_reference": {
-          "min": 0,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         },
         "stored_definition_class": {
-          "min": 0,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "stored_definition_class",
       "refs": {
         "class_definition": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_definition",
       "refs": {
         "class_prefixes": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "class_specifier": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_prefixes",
       "refs": {
         "class_type": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_type",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "class_spec_comp",
       "refs": {
-        "string_comment": {
-          "min": 1,
-          "max": 1
-        },
         "composition": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "string_comment": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_spec_base",
       "refs": {
         "base_prefix": {
-          "min": 1,
-          "max": 1
-        },
-        "component_reference": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "class_modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "component_reference": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_spec_enum",
       "refs": {
-        "enum_list": {
-          "min": 1,
-          "max": 1
-        },
         "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "enum_list": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_spec_der",
       "refs": {
-        "name": {
-          "min": 1,
-          "max": 1
-        },
         "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "name": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_spec_extends",
       "refs": {
         "class_modification": {
-          "min": 1,
-          "max": 1
-        },
-        "string_comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "composition": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "string_comment": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "class_specifier",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "base_prefix",
       "refs": {
         "type_prefix": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "enum_list",
       "refs": {
         "enumeration_literal": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "enumeration_literal",
       "refs": {
         "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "composition",
       "refs": {
-        "element_list": {
-          "min": 1,
-          "max": Infinity
-        },
-        "equation_section": {
-          "min": 0,
-          "max": Infinity
-        },
         "algorithm_section": {
-          "min": 0,
-          "max": Infinity
-        },
-        "language_specification": {
-          "min": 0,
-          "max": 1
-        },
-        "external_function_call": {
-          "min": 0,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
         },
         "annotation": {
-          "min": 0,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 0
+        },
+        "element_list": {
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
+        },
+        "equation_section": {
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
+        },
+        "external_function_call": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
+        },
+        "language_specification": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "language_specification",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "external_function_call",
       "refs": {
         "component_reference": {
-          "min": 0,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         },
         "expression_list": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "element_list",
       "refs": {
         "element": {
-          "min": 0,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "element",
       "refs": {
-        "import_clause": {
-          "min": 1,
-          "max": 1
-        },
         "extends_clause": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "import_clause": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "regular_element": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "replaceable_element": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "regular_element",
       "refs": {
         "class_definition": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "component_clause": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "replaceable_element",
       "refs": {
         "class_definition": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "comment": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         },
         "component_clause": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "constraining_clause": {
-          "min": 0,
-          "max": 1
-        },
-        "comment": {
-          "min": 0,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "import_clause",
       "refs": {
+        "comment": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
         "component_reference": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         },
         "import_list": {
-          "min": 0,
-          "max": 1
-        },
-        "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "import_list",
       "refs": {
         "import_list": {
-          "min": 0,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "extends_clause",
       "refs": {
-        "component_reference": {
-          "min": 1,
-          "max": 1
+        "annotation": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "class_modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
-        "annotation": {
-          "min": 1,
-          "max": 1
+        "component_reference": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "constraining_clause",
       "refs": {
-        "name": {
-          "min": 1,
-          "max": 1
-        },
         "class_modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "name": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "component_clause",
       "refs": {
-        "type_prefix": {
-          "min": 1,
-          "max": 1
-        },
-        "type_specifier": {
-          "min": 1,
-          "max": 1
-        },
         "array_subscripts": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "component_list": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "type_prefix": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "type_specifier": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "type_prefix",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "type_specifier_element",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "type_specifier",
       "refs": {
         "type_specifier_element": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "component_list",
       "refs": {
         "component_declaration": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "component_declaration",
       "refs": {
-        "declaration": {
-          "min": 1,
-          "max": 1
+        "comment": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "condition_attribute": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
-        "comment": {
-          "min": 1,
-          "max": 1
+        "declaration": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "condition_attribute",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "declaration",
       "refs": {
         "array_subscripts": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "modification_class",
       "refs": {
         "class_modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "expression": {
-          "min": 0,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "modification_assignment",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "modification_assignment2",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "modification",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "class_modification",
       "refs": {
         "argument_list": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "argument_list",
       "refs": {
         "argument": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "argument",
       "refs": {
         "element_modification_or_replaceable": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "element_redeclaration": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "element_modification_or_replaceable",
       "refs": {
         "element_modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "element_replaceable": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "element_modification",
       "refs": {
         "component_reference": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "string_comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "element_redeclaration",
       "refs": {
-        "short_class_definition": {
-          "min": 1,
-          "max": 1
-        },
         "component_clause1": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "element_replaceable": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "short_class_definition": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "element_replaceable",
       "refs": {
-        "short_class_definition": {
-          "min": 1,
-          "max": 1
-        },
         "component_clause1": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "constraining_clause": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "short_class_definition": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "component_clause1",
       "refs": {
+        "component_declaration1": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
         "type_prefix": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "type_specifier": {
-          "min": 1,
-          "max": 1
-        },
-        "component_declaration1": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "component_declaration1",
       "refs": {
-        "declaration": {
-          "min": 1,
-          "max": 1
-        },
         "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "declaration": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "short_class_definition",
       "refs": {
-        "class_prefixes": {
-          "min": 1,
-          "max": 1
+        "array_subscripts": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "base_prefix": {
-          "min": 1,
-          "max": 1
-        },
-        "component_reference": {
-          "min": 1,
-          "max": 1
-        },
-        "array_subscripts": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "class_modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "class_prefixes": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "comment": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
+        },
+        "component_reference": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "enum_list": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_block",
       "refs": {
         "equation": {
-          "min": 0,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_section",
       "refs": {
         "equation_block": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_block",
       "refs": {
         "statement": {
-          "min": 0,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "algorithm_section",
       "refs": {
         "statement_block": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_simple",
       "refs": {
-        "simple_expression": {
-          "min": 1,
-          "max": 1
-        },
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "simple_expression": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_if",
       "refs": {
         "if_equation": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_for",
       "refs": {
         "for_equation": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_connect_clause",
       "refs": {
         "connect_clause": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_when",
       "refs": {
         "when_equation": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_function",
       "refs": {
-        "name": {
-          "min": 1,
-          "max": 1
-        },
         "function_call_args": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "name": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "equation_options",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "equation",
       "refs": {
-        "equation_options": {
-          "min": 1,
-          "max": 1
-        },
         "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "equation_options": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_component_reference",
       "refs": {
         "component_reference": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "function_call_args": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_component_function",
       "refs": {
         "component_reference": {
-          "min": 2,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 2
         },
         "function_call_args": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_break",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "statement_return",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "statement_if",
       "refs": {
         "if_statement": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_for",
       "refs": {
         "for_statement": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_while",
       "refs": {
         "while_statement": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_when",
       "refs": {
         "when_statement": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "statement_options",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "statement",
       "refs": {
-        "statement_options": {
-          "min": 1,
-          "max": 1
-        },
         "comment": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "statement_options": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "if_equation",
       "refs": {
-        "expression": {
-          "min": 1,
-          "max": Infinity
-        },
         "equation_block": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
+        },
+        "expression": {
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "if_statement",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         },
         "statement_block": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "for_equation",
       "refs": {
-        "for_indices": {
-          "min": 1,
-          "max": 1
-        },
         "equation_block": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "for_indices": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "for_statement",
       "refs": {
         "for_indices": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "statement_block": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "for_indices",
       "refs": {
         "for_index": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "for_index",
       "refs": {
         "expression": {
-          "min": 0,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 0
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "while_statement",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "statement_block": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "when_equation",
       "refs": {
-        "expression": {
-          "min": 1,
-          "max": Infinity
-        },
         "equation_block": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
+        },
+        "expression": {
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "when_statement",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         },
         "statement_block": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "connect_clause",
       "refs": {
         "component_reference": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expression_simple",
       "refs": {
         "simple_expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expression_if",
       "refs": {
         "expression": {
-          "min": 3,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 3
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expression",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "simple_expression",
       "refs": {
         "expr": {
-          "min": 1,
-          "max": 3
+          "_type": "RuleRef",
+          "max_occurs": 3,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_neg",
       "refs": {
         "expr": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_exp",
       "refs": {
         "primary": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_mul",
       "refs": {
         "expr": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_add",
       "refs": {
         "expr": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_rel",
       "refs": {
         "expr": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_not",
       "refs": {
         "expr": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_and",
       "refs": {
         "expr": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_or",
       "refs": {
         "expr": {
-          "min": 2,
-          "max": 2
+          "_type": "RuleRef",
+          "max_occurs": 2,
+          "min_occurs": 2
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr_primary",
       "refs": {
         "primary": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expr",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "primary_unsigned_number",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "primary_string",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "primary_false",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "primary_true",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "primary_function",
       "refs": {
         "component_reference": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "function_call_args": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "primary_derivative",
       "refs": {
         "function_call_args": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "primary_initial",
       "refs": {
         "function_call_args": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "primary_component_reference",
       "refs": {
         "component_reference": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "primary_output_expression_list",
       "refs": {
         "output_expression_list": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "primary_expression_list",
       "refs": {
         "expression_list": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "primary_function_arguments",
       "refs": {
         "function_arguments": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "primary_end",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "primary",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "name",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "component_reference_element",
       "refs": {
         "array_subscripts": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "component_reference",
       "refs": {
         "component_reference_element": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "function_call_args",
       "refs": {
         "function_arguments": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "function_arguments",
       "refs": {
-        "function_argument": {
-          "min": 1,
-          "max": Infinity
-        },
         "for_indices": {
-          "min": 0,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 0
+        },
+        "function_argument": {
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         },
         "named_arguments": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "named_arguments",
       "refs": {
         "named_argument": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "named_argument",
       "refs": {
         "function_argument": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "argument_function",
       "refs": {
         "name": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         },
         "named_arguments": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "argument_expression",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "function_argument",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "output_expression_list",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "expression_list",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "array_subscripts",
       "refs": {
         "subscript": {
-          "min": 1,
-          "max": Infinity
+          "_type": "RuleRef",
+          "max_occurs": Infinity,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "subscript",
       "refs": {
         "expression": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "comment",
       "refs": {
-        "string_comment": {
-          "min": 1,
-          "max": 1
-        },
         "annotation": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
+        },
+        "string_comment": {
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     },
     {
+      "_type": "Rule",
       "name": "string_comment",
       "refs": {}
     },
     {
+      "_type": "Rule",
       "name": "annotation",
       "refs": {
         "class_modification": {
-          "min": 1,
-          "max": 1
+          "_type": "RuleRef",
+          "max_occurs": 1,
+          "min_occurs": 1
         }
       }
     }
