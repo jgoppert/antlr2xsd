@@ -47,9 +47,14 @@ class Listener(ANTLRv4ParserListener):
         self.src[ctx] = elem
 
     def exitParserRuleSpec(self, ctx: ANTLRv4Parser.RuleSpecContext):
-        ebnf = self.scope['ebnf'][-1]
+        ebnf = self.scope['ebnf'].pop()
         for k in ebnf.keys():
-            self.scope['rule']['refs'][k] = ebnf[k]
+            ref = ebnf[k]
+            if ref['max'] == inf:
+                ref['max'] = 'unbounded'
+            ref['min'] = str(ref['min'])
+            ref['max'] = str(ref['max'])
+            self.scope['rule']['refs'][k] = ref
         self.scope['root']['rules'].append(self.scope['rule'])
 
     def enterEbnf(self, ctx: ANTLRv4Parser.EbnfContext):
@@ -134,14 +139,9 @@ def to_xsd(data):
             name=rule['name'])  # rule_type: etree._Element
         for ref_name, ref in rule['refs'].items():
             rule_type.append(etree.Element('element', name=ref_name, rule_type=ref_name))
-            min_val = str(ref['min'])
-            if ref['max'] == inf:
-                max_val = 'unbounded'
-            else:
-                max_val = str(ref['max'])
-            if min_val == '1' and max_val == '1':
+            if ref['min'] == '1' and ref['max'] == '1':
                 continue
-            rule_type.attrib['min_occurs'] = min_val
-            rule_type.attrib['max_occurs'] = max_val
+            rule_type.attrib['min_occurs'] = ref['min']
+            rule_type.attrib['max_occurs'] = ref['max']
         root.append(rule_type)
     return root
