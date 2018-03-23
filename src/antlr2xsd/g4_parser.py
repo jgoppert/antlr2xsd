@@ -23,8 +23,7 @@ class Listener(ANTLRv4ParserListener):
     def __init__(self):
         self.scope = {
             'root': None,
-            'rule': None,
-            'ebnf': []
+            'rule': []
         }
         self.min_max_scope = []
         self.src = {}
@@ -36,39 +35,25 @@ class Listener(ANTLRv4ParserListener):
 
     def enterParserRuleSpec(self, ctx: ANTLRv4Parser.ParserRuleSpecContext):
         elem = g4.Rule(name=str(ctx.RULE_REF()))
-        self.scope['ebnf'].append({})
-        self.scope['rule'] = elem
+        self.scope['rule'].append(elem)
         self.src[ctx] = elem
 
     def exitParserRuleSpec(self, ctx: ANTLRv4Parser.RuleSpecContext):
-        self.scope['rule'].refs.update(self.scope['ebnf'].pop())
-        self.scope['root'].rules.append(self.scope['rule'])
-
-    def enterEbnf(self, ctx: ANTLRv4Parser.EbnfContext):
-        self.scope['ebnf'].append({})
+        self.scope['root'].rules.append(self.scope['rule'].pop())
 
     def exitEbnf(self, ctx: ANTLRv4Parser.EbnfContext):
         if ctx.blockSuffix() is not None:
             suffix = self.src[ctx.blockSuffix()]
-            refs = self.scope['ebnf'][-1]
-            if suffix == "?":
-                for ref in refs:
-                    refs[ref].min_occurs = 0
-            elif suffix == "+":
-                for ref in refs:
-                    refs[ref].min_occurs += 1
-                    refs[ref].max_occurs = inf
-            elif suffix == "*":
-                for ref in refs:
-                    refs[ref].min_occurs *= 0
-                    refs[ref].max_occurs *= inf
-        inner = self.scope['ebnf'].pop()
-        outer = self.scope['ebnf'][-1]
-        for k in inner.keys():
-            if k not in outer.keys():
-                outer[k] = g4.RuleRef(min_occurs=0, max_occurs=0)
-            outer[k].min_occurs += inner[k].min_occurs
-            outer[k].max_occurs += inner[k].max_occurs
+            rule = self.scope['rule'][-1]
+            for ref in rule.refs:
+                if suffix == "?":
+                    rule.refs[ref].min_occurs = 0
+                elif suffix == "+":
+                    rule.refs[ref].min_occurs += 1
+                    rule.refs[ref].max_occurs = inf
+                elif suffix == "*":
+                    rule.refs[ref].min_occurs *= 0
+                    rule.refs[ref].max_occurs *= inf
 
     def exitBlockSuffix(self, ctx: ANTLRv4Parser.BlockSuffixContext):
         self.src[ctx] = self.src[ctx.ebnfSuffix()]
@@ -77,23 +62,22 @@ class Listener(ANTLRv4ParserListener):
         self.src[ctx] = ctx.getText()
 
     def exitRuleref(self, ctx: ANTLRv4Parser.RulerefContext):
-        refs = self.scope['ebnf'][-1]
-        rule_ref = str(ctx.RULE_REF())
-        if rule_ref not in refs:
-            refs[rule_ref] = g4.RuleRef(min_occurs=0, max_occurs=0)
-        refs[rule_ref].min_occurs += 1
-        refs[rule_ref].max_occurs += 1
+        rule = self.scope['rule'][-1]
+        ref = str(ctx.RULE_REF())
+        if ref not in rule.refs:
+            rule.refs[ref] = g4.RuleRef(min_occurs=0, max_occurs=0)
+        rule.refs[ref].min_occurs += 1
+        rule.refs[ref].max_occurs += 1
 
     def enterLabeledAlt(self, ctx: ANTLRv4Parser.LabeledAltContext):
         if ctx.identifier() is not None:
-            self.scope['ebnf'].append({})
+            self.scope['rule'].append(g4.Rule('unknown'))
 
     def exitLabeledAlt(self, ctx: ANTLRv4Parser.LabeledAltContext):
         if ctx.identifier() is not None:
             rule_name = self.src[ctx.identifier()]
-            rule = g4.Rule(name=rule_name)
-            rule.refs.update(self.scope['ebnf'].pop())
-            self.scope['root'].rules.append(rule)
+            self.scope['rule'][-1].name = rule_name
+            self.scope['root'].rules.append(self.scope['rule'].pop())
 
     def exitIdentifier(self, ctx: ANTLRv4Parser.IdentifierContext):
         self.src[ctx] = ctx.getText()

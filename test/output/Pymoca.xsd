@@ -2,7 +2,7 @@
   <xs:element name="modelica" type="stored_definition"/>
   <xs:complexType name="stored_definition">
     <xs:sequence>
-      <xs:element name="component_reference" type="component_reference" minOccurs="0"/>
+      <xs:element name="component_reference" type="component_reference" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="stored_definition_class" type="stored_definition_class" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
@@ -47,7 +47,7 @@
   </xs:complexType>
   <xs:complexType name="class_spec_der">
     <xs:sequence>
-      <xs:element name="name" type="name"/>
+      <xs:element name="name" type="name" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="comment" type="comment"/>
     </xs:sequence>
   </xs:complexType>
@@ -68,7 +68,7 @@
   </xs:complexType>
   <xs:complexType name="enum_list">
     <xs:sequence>
-      <xs:element name="enumeration_literal" type="enumeration_literal" maxOccurs="unbounded"/>
+      <xs:element name="enumeration_literal" type="enumeration_literal" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="enumeration_literal">
@@ -78,7 +78,7 @@
   </xs:complexType>
   <xs:complexType name="composition">
     <xs:sequence>
-      <xs:element name="element_list" type="element_list" maxOccurs="unbounded"/>
+      <xs:element name="element_list" type="element_list" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="equation_section" type="equation_section" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="algorithm_section" type="algorithm_section" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="language_specification" type="language_specification" minOccurs="0"/>
@@ -116,15 +116,15 @@
   </xs:complexType>
   <xs:complexType name="replaceable_element">
     <xs:sequence>
-      <xs:element name="class_definition" type="class_definition"/>
-      <xs:element name="component_clause" type="component_clause"/>
+      <xs:element name="class_definition" type="class_definition" minOccurs="0"/>
+      <xs:element name="component_clause" type="component_clause" minOccurs="0"/>
       <xs:element name="constraining_clause" type="constraining_clause" minOccurs="0"/>
       <xs:element name="comment" type="comment" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="import_clause">
     <xs:sequence>
-      <xs:element name="component_reference" type="component_reference" minOccurs="2" maxOccurs="2"/>
+      <xs:element name="component_reference" type="component_reference" minOccurs="0" maxOccurs="2"/>
       <xs:element name="import_list" type="import_list" minOccurs="0"/>
       <xs:element name="comment" type="comment"/>
     </xs:sequence>
@@ -163,12 +163,12 @@
   </xs:complexType>
   <xs:complexType name="type_specifier">
     <xs:sequence>
-      <xs:element name="type_specifier_element" type="type_specifier_element" maxOccurs="unbounded"/>
+      <xs:element name="type_specifier_element" type="type_specifier_element" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="component_list">
     <xs:sequence>
-      <xs:element name="component_declaration" type="component_declaration" maxOccurs="unbounded"/>
+      <xs:element name="component_declaration" type="component_declaration" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="component_declaration">
@@ -191,7 +191,7 @@
   </xs:complexType>
   <xs:complexType name="modification_class">
     <xs:sequence>
-      <xs:element name="class_modification" type="class_modification"/>
+      <xs:element name="class_modification" type="class_modification" minOccurs="0"/>
       <xs:element name="expression" type="expression" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -215,7 +215,7 @@
   </xs:complexType>
   <xs:complexType name="argument_list">
     <xs:sequence>
-      <xs:element name="argument" type="argument" maxOccurs="unbounded"/>
+      <xs:element name="argument" type="argument" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="argument">
@@ -345,7 +345,7 @@
   </xs:complexType>
   <xs:complexType name="statement_component_function">
     <xs:sequence>
-      <xs:element name="component_reference" type="component_reference" minOccurs="2" maxOccurs="unbounded"/>
+      <xs:element name="component_reference" type="component_reference" maxOccurs="unbounded"/>
       <xs:element name="function_call_args" type="function_call_args"/>
     </xs:sequence>
   </xs:complexType>
@@ -386,14 +386,14 @@
   </xs:complexType>
   <xs:complexType name="if_equation">
     <xs:sequence>
-      <xs:element name="expression" type="expression" maxOccurs="unbounded"/>
-      <xs:element name="equation_block" type="equation_block" maxOccurs="unbounded"/>
+      <xs:element name="expression" type="expression" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="equation_block" type="equation_block" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="if_statement">
     <xs:sequence>
-      <xs:element name="expression" type="expression" maxOccurs="unbounded"/>
-      <xs:element name="statement_block" type="statement_block" maxOccurs="unbounded"/>
+      <xs:element name="expression" type="expression" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="statement_block" type="statement_block" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="for_equation">
@@ -410,7 +410,7 @@
   </xs:complexType>
   <xs:complexType name="for_indices">
     <xs:sequence>
-      <xs:element name="for_index" type="for_index" maxOccurs="unbounded"/>
+      <xs:element name="for_index" type="for_index" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="for_index">
@@ -426,14 +426,14 @@
   </xs:complexType>
   <xs:complexType name="when_equation">
     <xs:sequence>
-      <xs:element name="expression" type="expression" maxOccurs="unbounded"/>
-      <xs:element name="equation_block" type="equation_block" maxOccurs="unbounded"/>
+      <xs:element name="expression" type="expression" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="equation_block" type="equation_block" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="when_statement">
     <xs:sequence>
-      <xs:element name="expression" type="expression" maxOccurs="unbounded"/>
-      <xs:element name="statement_block" type="statement_block" maxOccurs="unbounded"/>
+      <xs:element name="expression" type="expression" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="statement_block" type="statement_block" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="connect_clause">
@@ -448,7 +448,7 @@
   </xs:complexType>
   <xs:complexType name="expression_if">
     <xs:sequence>
-      <xs:element name="expression" type="expression" minOccurs="3" maxOccurs="unbounded"/>
+      <xs:element name="expression" type="expression" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="expression">
@@ -456,7 +456,7 @@
   </xs:complexType>
   <xs:complexType name="simple_expression">
     <xs:sequence>
-      <xs:element name="expr" type="expr" maxOccurs="3"/>
+      <xs:element name="expr" type="expr" minOccurs="0" maxOccurs="3"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="expr_neg">
@@ -547,7 +547,7 @@
   </xs:complexType>
   <xs:complexType name="primary_expression_list">
     <xs:sequence>
-      <xs:element name="expression_list" type="expression_list" maxOccurs="unbounded"/>
+      <xs:element name="expression_list" type="expression_list" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="primary_function_arguments">
@@ -571,7 +571,7 @@
   </xs:complexType>
   <xs:complexType name="component_reference">
     <xs:sequence>
-      <xs:element name="component_reference_element" type="component_reference_element" maxOccurs="unbounded"/>
+      <xs:element name="component_reference_element" type="component_reference_element" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="function_call_args">
@@ -581,14 +581,14 @@
   </xs:complexType>
   <xs:complexType name="function_arguments">
     <xs:sequence>
-      <xs:element name="function_argument" type="function_argument" maxOccurs="unbounded"/>
+      <xs:element name="function_argument" type="function_argument" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="for_indices" type="for_indices" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="named_arguments" type="named_arguments"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="named_arguments">
     <xs:sequence>
-      <xs:element name="named_argument" type="named_argument" maxOccurs="unbounded"/>
+      <xs:element name="named_argument" type="named_argument" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="named_argument">
@@ -612,17 +612,17 @@
   </xs:complexType>
   <xs:complexType name="output_expression_list">
     <xs:sequence>
-      <xs:element name="expression" type="expression" maxOccurs="unbounded"/>
+      <xs:element name="expression" type="expression" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="expression_list">
     <xs:sequence>
-      <xs:element name="expression" type="expression" maxOccurs="unbounded"/>
+      <xs:element name="expression" type="expression" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="array_subscripts">
     <xs:sequence>
-      <xs:element name="subscript" type="subscript" maxOccurs="unbounded"/>
+      <xs:element name="subscript" type="subscript" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="subscript">

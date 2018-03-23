@@ -7,7 +7,7 @@
       "refs": {
         "component_reference": {
           "_type": "RuleRef",
-          "max_occurs": 1,
+          "max_occurs": Infinity,
           "min_occurs": 0
         },
         "stored_definition_class": {
@@ -129,8 +129,8 @@
         },
         "name": {
           "_type": "RuleRef",
-          "max_occurs": 1,
-          "min_occurs": 1
+          "max_occurs": Infinity,
+          "min_occurs": 0
         }
       }
     },
@@ -178,7 +178,7 @@
         "enumeration_literal": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -210,7 +210,7 @@
         "element_list": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "equation_section": {
           "_type": "RuleRef",
@@ -310,7 +310,7 @@
         "class_definition": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "comment": {
           "_type": "RuleRef",
@@ -320,7 +320,7 @@
         "component_clause": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "constraining_clause": {
           "_type": "RuleRef",
@@ -341,7 +341,7 @@
         "component_reference": {
           "_type": "RuleRef",
           "max_occurs": 2,
-          "min_occurs": 2
+          "min_occurs": 0
         },
         "import_list": {
           "_type": "RuleRef",
@@ -441,7 +441,7 @@
         "type_specifier_element": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -452,7 +452,7 @@
         "component_declaration": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -511,7 +511,7 @@
         "class_modification": {
           "_type": "RuleRef",
           "max_occurs": 1,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "expression": {
           "_type": "RuleRef",
@@ -565,7 +565,7 @@
         "argument": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -911,7 +911,7 @@
         "component_reference": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 2
+          "min_occurs": 1
         },
         "function_call_args": {
           "_type": "RuleRef",
@@ -1002,12 +1002,12 @@
         "equation_block": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "expression": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1018,12 +1018,12 @@
         "expression": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "statement_block": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1066,7 +1066,7 @@
         "for_index": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1104,12 +1104,12 @@
         "equation_block": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "expression": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1120,12 +1120,12 @@
         "expression": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "statement_block": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1158,7 +1158,7 @@
         "expression": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 3
+          "min_occurs": 1
         }
       }
     },
@@ -1174,7 +1174,7 @@
         "expr": {
           "_type": "RuleRef",
           "max_occurs": 3,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1369,7 +1369,7 @@
         "expression_list": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1417,7 +1417,7 @@
         "component_reference_element": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1444,7 +1444,7 @@
         "function_argument": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         },
         "named_arguments": {
           "_type": "RuleRef",
@@ -1460,7 +1460,7 @@
         "named_argument": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1514,7 +1514,7 @@
         "expression": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1525,7 +1525,7 @@
         "expression": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
@@ -1536,7 +1536,7 @@
         "subscript": {
           "_type": "RuleRef",
           "max_occurs": Infinity,
-          "min_occurs": 1
+          "min_occurs": 0
         }
       }
     },
