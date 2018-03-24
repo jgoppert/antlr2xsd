@@ -1,7 +1,15 @@
-grammar Hello;
+grammar Modelica;
 
-root: rule1 rule2?;
+//=========================================================
+//  B.2.1 Stored Definition - Within
+//=========================================================
 
-rule1: 'Hello';
+// B.2.1.1 ------------------------------------------------
+stored_definition :
+    (stored_definition_class)*
+    ;
 
-rule2: 'World';
+stored_definition_class :
+    FINAL? ';' # final
+    | EACH? ';' # each
+    ;

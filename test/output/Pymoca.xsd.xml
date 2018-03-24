@@ -1,24 +1,2 @@
-<pym:modelica xmlns:pym="http://www.pymoca.com/Pymoca">
-  <!--Zero or more repetitions:-->
-  <pym:component_reference>
-    <!--Zero or more repetitions:-->
-    <pym:component_reference_element>
-      <!--Optional:-->
-      <pym:array_subscripts>
-        <!--Zero or more repetitions:-->
-        <pym:subscript>
-          <pym:expression/>
-        </pym:subscript>
-      </pym:array_subscripts>
-    </pym:component_reference_element>
-  </pym:component_reference>
-  <!--Zero or more repetitions:-->
-  <pym:stored_definition_class>
-    <pym:class_definition>
-      <pym:class_prefixes>
-        <pym:class_type/>
-      </pym:class_prefixes>
-      <pym:class_specifier/>
-    </pym:class_definition>
-  </pym:stored_definition_class>
-</pym:modelica>
+<modelica xmlns="http://www.pymoca.com/Pymoca">
+</modelica>
