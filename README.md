@@ -12,7 +12,6 @@ Note: In order to make ANTLR preview work well with PyCharm, LexAdaptor.py is di
 ### Roadmap
 * [x] Read grammar rules and count multiplicity of rule references
 * [x] For alternatives in rules, if labelled, make a new type. If not labelled, add choices.
-* [ ] For alternatives in rules, if not labelled, add choices.
 * [ ] Ignore non-optional tokens (e.g. '=' in equation), but keep optional tokens (e.g. 'fixed'), since they hold information if present or not.
 * [ ] Convert types without rule references to simple types.
 * [ ] Handle how to map lexer tokens to XSD types, user passed dict?
