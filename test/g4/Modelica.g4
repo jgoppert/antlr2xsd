@@ -31,7 +31,7 @@ class_prefixes :
     ;
 
 class_type:
-    'class'
+    ('class'
         | 'model'
         | 'operator'? 'record'
         | 'block'
@@ -39,7 +39,7 @@ class_type:
         | 'type'
         | 'package'
         | ('pure' | 'impure')? 'operator'? 'function'
-        | 'operator'
+        | 'operator')
     ;
 
 // B.2.2.3 ------------------------------------------------
